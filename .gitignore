@@ -3,3 +3,4 @@ data/enwik9.zip
 data/enwiki-20170820-pages-articles.xml.bz2
 data/wiki-text.txt
 data/wikipedia.msgpack.gz
+.vscode/settings.json
