@@ -6,11 +6,10 @@ fin = gzip.open('../data/wikipedia.msgpack.gz', 'rb')
 unpacker = msgpack.Unpacker(fin, encoding='utf-8')
 
 i = 0
+sentence_list = []
 for sentence in unpacker:
-    print(sentence[1])
-    i+=1
-    if i>9: break
+    sentence_list.append(sentence[1])
 
-word2vec_model = Word2Vec(sentences=word2vec.LineSentence(unpacker), sg=1, size=100, window=5, negative=10, iter=3)
+word2vec_model = Word2Vec(sentences=sentence_list, sg=1, size=100, window=5, min_count=100, negative=10, iter=3)
 
 fin.close()
