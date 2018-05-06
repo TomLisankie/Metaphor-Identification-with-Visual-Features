@@ -24,7 +24,7 @@ sched = Scheduler()
 sched.start()
 
 def check_in():
-    print "1 Minute has passed"
+    print("1 Minute has passed")
 
 sched.add_interval_job(check_in, seconds = 60)
 
