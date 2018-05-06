@@ -9,6 +9,9 @@ i = 0
 sentence_list = []
 for sentence in unpacker:
     sentence_list.append(sentence[1])
+    if i % 10000 == 0:
+        print("Appended 10000 more, currently at", i)
+    i = i + 1
 
 word2vec_model = Word2Vec(sentences=sentence_list, sg=1, size=100, window=5, min_count=100, negative=10, workers=32)
 
