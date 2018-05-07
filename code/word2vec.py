@@ -9,8 +9,12 @@ unpacker = msgpack.Unpacker(the_file, encoding = "utf-8")
 class WikiLemmaIterable(object):
     # Iterable for all lemmatized sentences in the corpus
     def __iter__(self):
+        i = 0
         for sentence in unpacker:
             yield sentence[1]
+            if i % 10000 == 0:
+                print("Yielded 10,000 more sentences. Total yielded is at", i)
+            i += 1
 
 class BatchLogger(CallbackAny2Vec):
     def __init__(self):
