@@ -14,21 +14,21 @@ class WikiLemmaIterable(object):
 
 class BatchLogger(CallbackAny2Vec):
     def __init__(self):
-            self.batch = 0
-        def on_batch_begin(self, model):
-            print("Batch #{} start".format(self.batch))
-        def on_batch_end(self, model):
-            print("Batch #{} end".format(self.batch))
-            self.batch += 1
+        self.batch = 0
+    def on_batch_begin(self, model):
+        print("Batch #{} start".format(self.batch))
+    def on_batch_end(self, model):
+        print("Batch #{} end".format(self.batch))
+        self.batch += 1
 
 class EpochLogger(CallbackAny2Vec):
     def __init__(self):
             self.epoch = 0
-        def on_epoch_begin(self, model):
-            print("Epoch #{} start".format(self.epoch))
-        def on_epoch_end(self, model):
-            print("Epoch #{} end".format(self.epoch))
-            self.epoch += 1
+    def on_epoch_begin(self, model):
+        print("Epoch #{} start".format(self.epoch))
+    def on_epoch_end(self, model):
+        print("Epoch #{} end".format(self.epoch))
+        self.epoch += 1
 
 wiki_iterable = WikiLemmaIterable()
 batch_logger = BatchLogger()
