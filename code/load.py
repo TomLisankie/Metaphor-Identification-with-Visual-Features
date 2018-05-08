@@ -31,4 +31,4 @@ class EpochLogger(CallbackAny2Vec):
 
 model = Word2Vec.load("../data/word2vec_model")
 
-print(model.wv.most_similar(positive="bad"))
+print(model.wv.most_similar(positive="king"))
