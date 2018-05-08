@@ -39,7 +39,7 @@ batch_logger = BatchLogger()
 epoch_logger = EpochLogger()
 
 word2vec_model = Word2Vec(sentences=wiki_iterable, sg=1, size=100, window=5, min_count=100, workers=32, hs=0,
-                            negative=10, iter=3, batch_words=10000, callbacks=[batch_logger, epoch_logger])
+                            negative=10, iter=3, callbacks=[batch_logger, epoch_logger])
 
 word2vec_model.save("../data/word2vec_model")
 
